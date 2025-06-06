@@ -1,7 +1,5 @@
-/* Overlay.css */
 @import "index.css";
 
-/* on ajoute un offset paramétrable */
 .scroll {
   --title-offset: 0px;
   scroll-behavior: smooth;
@@ -14,7 +12,6 @@
   scroll-snap-align: start;
 }
 
-/* titre fixe spécifique Overlay */
 .fixed-title {
   position: fixed;
   top: 0;
@@ -36,7 +33,6 @@
   color: #ed8008;
 }
 
-/* ajustement du .dot pour tenir compte du titre fixe */
 .dot {
   top: var(--title-offset);
   padding-top: 0;

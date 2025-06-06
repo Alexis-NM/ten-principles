@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./IntroOverlay.css";
 
 function IntroOverlay({ onOpen }) {
@@ -14,7 +14,6 @@ function IntroOverlay({ onOpen }) {
         if (s <= 0) {
           clearInterval(intervalRef.current);
           intervalRef.current = null;
-          // on passe à l'état "levé"
           setLifted(true);
           return 0;
         }
@@ -31,7 +30,6 @@ function IntroOverlay({ onOpen }) {
     }
   };
 
-  // Dès que l'overlay est levé, on prévient le parent après la transition
   useEffect(() => {
     if (!lifted) return;
     const timer = setTimeout(() => {
@@ -41,7 +39,7 @@ function IntroOverlay({ onOpen }) {
   }, [lifted, onOpen]);
 
   return (
-    <div
+    <section
       className={`intro-overlay${lifted ? " lifted" : ""}`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
@@ -49,12 +47,12 @@ function IntroOverlay({ onOpen }) {
       onTouchStart={handleMouseDown}
       onTouchEnd={handleMouseUp}
     >
-      <div className="intro-texts">
+      <article className="intro-texts">
         <h1>10 Principles for Good Design</h1>
         <p>Dieter Rams</p>
-      </div>
+      </article>
       <div className="intro-button" style={{ width: size, height: size }} />
-    </div>
+    </section>
   );
 }
 

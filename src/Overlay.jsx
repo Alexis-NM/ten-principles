@@ -1,5 +1,4 @@
-// Overlay.jsx
-import React, { forwardRef, useRef, useEffect, useCallback } from "react";
+import { forwardRef, useRef, useEffect, useCallback } from "react";
 import "./Overlay.css";
 
 const principles = [
@@ -122,27 +121,24 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => {
 
   return (
     <>
-      {/* titre fixe */}
-      <div className="fixed-title" ref={fixedRef}>
+      <section className="fixed-title" ref={fixedRef}>
         <h1>
           <span className="highlight">Good design</span>{" "}
           <span>{principles[0].rest}</span>
         </h1>
-      </div>
-
-      {/* scrollable */}
-      <div ref={containerRef} className="scroll">
+      </section>
+      <section ref={containerRef} className="scroll">
         {principles.map((p, i) => (
-          <div key={i} className="section">
+          <article key={i} className="section">
             <div className="dot">
               <p>{p.description}</p>
             </div>
-          </div>
+          </article>
         ))}
         <span className="caption" ref={caption}>
           1
         </span>
-      </div>
+      </section>
     </>
   );
 });

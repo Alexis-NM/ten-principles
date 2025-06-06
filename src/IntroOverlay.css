@@ -10,17 +10,14 @@
   background: #e1e4e1;
   z-index: 100;
   overflow: hidden;
-  /* transition pour le levé du rideau */
   transition: transform 0.6s ease-in-out;
   font-family: "Neue Haas Grotesk Display Pro", sans-serif;
 }
 
-/* Quand lifted === true, on translate vers le haut */
 .intro-overlay.lifted {
   transform: translateY(-100%);
 }
 
-/* Le texte reste centré */
 .intro-texts {
   position: fixed;
   top: 40%;
@@ -30,18 +27,19 @@
   color: #020202;
   pointer-events: none;
 }
+
 .intro-texts h1 {
   font-size: 4em;
   margin: 0.25em 0;
   font-weight: 300;
 }
+
 .intro-texts p {
   font-size: 3rem;
   margin-bottom: 2em;
   font-weight: 800;
 }
 
-/* Le bouton est centré en absolu, ne bouge plus pendant l'animation du rideau */
 .intro-button {
   position: fixed;
   top: 68%;
@@ -50,5 +48,4 @@
   background: #f0b203;
   border-radius: 50%;
   touch-action: none;
-  /* on a déjà le transition sur size inline, pas besoin ici */
 }

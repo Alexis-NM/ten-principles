@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 
 export default function Cursor3D() {
@@ -6,7 +6,6 @@ export default function Cursor3D() {
   const { viewport } = useThree();
   const [pointer, setPointer] = useState([0, 0]);
 
-  // 1) On écoule pointermove sur window pour toujours capter la souris
   useEffect(() => {
     const onMove = (e) => {
       const x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -27,7 +26,6 @@ export default function Cursor3D() {
 
   return (
     <mesh ref={ref} renderOrder={999} raycast={() => null}>
-      {/* CERCLE ORANGE */}
       <circleBufferGeometry args={[0.05, 32]} />
       <meshBasicMaterial color="orange" depthTest={false} depthWrite={false} />
     </mesh>
