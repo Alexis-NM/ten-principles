@@ -1,4 +1,4 @@
-# Dieter Rams’ 10 Design Principles in 3D
+# Dieter Rams’ 10 Design Principles in 3D (WIP)
 
 A lightweight three.js project showcasing Dieter Rams’ ten design principles through an interactive 3D animation.
 
