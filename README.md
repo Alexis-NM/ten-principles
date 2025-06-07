@@ -10,13 +10,6 @@ This repository contains a three.js‐based web experience that highlights the e
 
 ---
 
-## Live Demo
-
-A working (but still evolving) version is deployed on Vercel:
-[https://ten-principles.vercel.app/](https://ten-principles.vercel.app/)
-
----
-
 ## Screenshot
 
 ![Screenshot](public/screenshot.png)
